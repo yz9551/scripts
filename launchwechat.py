@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+
+'''
+This is a python script for removing shadows from certain Windows programs (initially used for wechat) running under Steam proton.
+Should work for wine in general with a few tweaks.
+
+'''
+
 import subprocess
 import time
 import socket
@@ -10,6 +17,7 @@ def match_head(head):
     return lambda title: title.startswith(head)
 
 
+# taken from .desktop file created by steam
 RUN_WECHAT_CMD = ('steam', 'steam://rungameid/14783848130939977728')
 KILL_WECHAT_CMD = ('pkill', 'WeChat.exe')
 GET_WINDOW_CMD = ('xwininfo', '-root', '-children')
